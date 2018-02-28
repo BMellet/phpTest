@@ -14,7 +14,7 @@ h1
 input{
     border:solid 1px rgba(0, 0, 0, 0.1);
     padding:20px;
-    margin:5px;
+    margin: 5px;
     font-size: medium;
 }
 button
@@ -141,6 +141,9 @@ section form :not(button){
 {
     width: 30%;
     height: auto;
+}
+#pseudo input{
+    margin:2px 0px 2px 2px;
 }
 .ok
 {
