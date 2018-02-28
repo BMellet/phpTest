@@ -1,0 +1,117 @@
+body{
+    text-align: center;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+.name{
+    color: whitesmoke;
+}
+h1
+{
+    text-transform:uppercase;
+
+}
+input{
+    border:solid 1px rgba(0, 0, 0, 0.1);
+    padding:20px;
+    margin:5px;
+    font-size: medium;
+}
+button
+{
+    padding: 20px;
+    margin: 2px;
+    border: none;
+    background-color: slateblue;
+    color: whitesmoke;
+    outline:none !important;
+    text-decoration: none;
+}
+button::-moz-focus-inner {
+    border: 0;
+ }
+ button:hover{
+     filter: brightness(1.2);
+ }
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background-color: slateblue;
+}
+nav ul li {
+     margin:15px 0px 15px 0px;
+
+}
+nav a{
+    padding:15px;
+}
+nav a:hover{
+    background-color: rgba(0, 0, 0, 0.3)
+}
+nav a:link, nav a:active, nav a:visited{
+    text-decoration: none;
+    color:whitesmoke;
+    outline: none;
+    
+
+}
+section{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+section form{
+ width: 30%;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+
+}
+section form :not(button){
+    width: 100%;
+}
+section form div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+section form div *{
+    width:  45%;
+}
+.ticket
+{
+
+    border:1px solid rgb(230, 230, 230);
+    margin-bottom:10px;
+    display: flex;
+    width: 51%;
+    height: 200px;
+}
+.ticketText{
+    text-align: center;
+    width: 100%;
+}
+.ticketText p:nth-child(2) {
+    font-size: x-large;
+    font-weight: 700;
+    text-decoration: underline;
+    margin-bottom: 2px;
+
+}
+.ticketText p:first-child
+{
+    text-align: right;
+    font-size: small;
+    margin: 0;
+    color: gray;
+}
+.blogImg{
+    width:80% ;
+}
+.ticketText form{
+    float: right;
+}
