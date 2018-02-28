@@ -63,33 +63,35 @@ section{
     flex-wrap: wrap;
     justify-content: center;
 }
-section form{
- width: 30%;
- display: flex;
- flex-wrap: wrap;
- justify-content: center;
-
-}
-section form :not(button){
-    width: 100%;
-}
-section form div{
+/* section form div{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
+    
 }
 section form div *{
     width:  45%;
-}
+} */
 .ticket
 {
-
-    border:1px solid rgb(230, 230, 230);
+    
+    border-top:1px solid rgb(230, 230, 230);
+    border-bottom:1px solid rgb(230, 230, 230);
     margin-bottom:10px;
     display: flex;
     width: 51%;
-    height: 200px;
+    height:auto;
+}
+.ticketImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: inherit;
+}
+.ticketImg img{
+    width: 100%;
+    
 }
 .ticketText{
     text-align: center;
@@ -100,7 +102,7 @@ section form div *{
     font-weight: 700;
     text-decoration: underline;
     margin-bottom: 2px;
-
+    
 }
 .ticketText p:first-child
 {
@@ -114,4 +116,39 @@ section form div *{
 }
 .ticketText form{
     float: right;
+}
+
+section form{
+width: 50%;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+
+}
+section form :not(button){
+    width: 100%;
+}
+/* VERIF LOGIN */
+
+#pseudo
+{
+    width: 53%;
+    display: flex;
+    flex-wrap: nowrap;
+    
+}
+#verif 
+{
+    width: 30%;
+    height: auto;
+}
+.ok
+{
+    background-image: url("/img/check.png");
+    background-size: contain;
+    background-position: center;
+}
+.dispo
+{
+    background-color: #43A047;
 }

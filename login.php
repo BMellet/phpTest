@@ -39,7 +39,10 @@
         }
         ?>
         <form method="post" action="">
-            <input name="pseudo" type="text" placeholder="Nom d'utilisateur">
+            <div id="pseudo">
+                <input id="input" name="pseudo" type="text" placeholder="Nom d'utilisateur">
+                <div id="verif"></div>
+            </div>
             <input name="password" type="password" placeholder="Mot de passe">
             <button name="ok">Se connecter</button>
         <form>
