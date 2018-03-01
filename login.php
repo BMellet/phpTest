@@ -1,14 +1,7 @@
-<?php require('bdd.php')?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
-    <link rel="stylesheet" href="main.css">
-    <title>CONNEXION</title>
-</head>
+<?php 
+    require('bdd.php');
+    require('head.php'); 
+?>
 <body>
     <div>
         <?php  require('nav.php');?>
@@ -38,15 +31,15 @@
             }
         }
         ?>
-        <form method="post" action="">
-            <div id="pseudo">
-                <input id="input" name="pseudo" type="text" placeholder="Nom d'utilisateur">
-                <div id="verif"></div>
+        <div class="wrapper">
+            <form method="post" action="">
+                <input  name="pseudo" type="text" placeholder="Nom d'utilisateur">
+                <input name="password" type="password" placeholder="Mot de passe">
+                <button name="ok">Se connecter</button>
+            
+            <form>
+                <a href="/inscription.php">Pas encore inscrit? Créez votre compte ici</a>
             </div>
-            <input name="password" type="password" placeholder="Mot de passe">
-            <button name="ok">Se connecter</button>
-        <form>
-            <a href="/inscription.php">Pas encore inscrit? Créez votre compte ici</a>
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

@@ -1,8 +1,8 @@
 var input = $('#input');
 var boxPseudo = $('#pseudo');
-var verif = $('#verif');
-var input2 = $('#input2');
-var verif2 = $('#verif2');
+var input_mdp = $('#mdp');
+var verif_mdp2 = $('#mdp2');
+var tri_ville =$('#tri')
 input.keyup(check);
 function check() {
 
@@ -12,16 +12,63 @@ function check() {
         dataType: 'html',
         data: 'pseudo=' + input.val(),
         success: function (data) {
-            if (data == 1) {
-                verif.html( "Pseudo disponible");
-
-            } else if (data == 0) {
-                verif.html("");
-            } else {
-                verif.html("Pseudo Indisponible");
+            
+            switch(parseInt(data))
+            {
+                case 0:
+                    input.removeClass("dispo");
+                    $("#btn_register").attr("disabled", true);
+                    break;
+                
+                case 1:
+                    input.addClass("dispo");
+                    break;
+                
+                case 2:
+                    input.addClass("pas_dispo");
+                    input.removeClass("dispo");
+                    $("#btn_register").attr("disabled", true);
+                    break;
+                default:           
+                
             }
         },
         error: function () {
         }
     });
 }
+
+verif_mdp2.keyup(function(){
+    if(input_mdp.val() !== verif_mdp2.val() && input_mdp.val()!=="")
+    {
+        $("#btn_register").attr("disabled", true);
+    }
+    else{
+        $("#btn_register").attr("disabled", false);
+        
+    }
+})
+
+function suppr(event){
+    if(confirm("voulez vous vraiment supprimer cette demande ? "))
+    {
+        $.ajax({
+            url: 'suppression.php',
+            type: 'GET',
+            dataType: 'html',
+            data: 'id=' + event.target.getAttribute("value"),
+            success: function (data) {
+                location.reload();
+            },
+            error: function () {
+            }
+        });
+    }
+
+}
+
+//tri des evenements selon les villes //
+
+
+
+

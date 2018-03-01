@@ -1,6 +1,5 @@
 <?php
- require('bdd.php');
-
+    require('bdd.php');
     $pseudo = $_GET['pseudo'];
     $res = mysqli_query($conn,"SELECT pseudo,password FROM `login` WHERE pseudo ='$pseudo' ");
     $row = mysqli_fetch_assoc($res);
