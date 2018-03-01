@@ -9,25 +9,36 @@
     </div>
  
         <section>
-        <div class="select">
             <?php
              if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
              {
-                $res = mysqli_query($conn,"SELECT ville FROM `evenement`");
-                ?>
-                <form method="get" action="Evenement.php">
-                <select name="choix" id="tri">
-                <option selected value="date" >Tri par Ville</option>
-                <?php
-                while ($rows = mysqli_fetch_array($res))
-                {
-                     echo'<option value="'.$rows['ville'].'">'.$rows['ville'].'</option>';      
-                }
-                ?>
-                <input type="submit" value="Go">
-                 </select>
-                 </form>
-        </div>
+                 $res = mysqli_query($conn,"SELECT ville FROM `evenement`");
+            ?>
+                <div class="recherche">
+                    <div class="search">
+                    <form method="get" action="Evenement.php">
+                        <input type="text" name="search" placeholder="Recherche">
+                        <label for="for_title">uniquement dans le titre</label>
+                        <input id="for_title"type="checkbox" name="title"> 
+                        <button>Rechercher</button>
+
+                    </form>
+                    </div>
+                    <div class="select">
+                        <form method="get" action="Evenement.php">
+                        <select name="choix" id="tri">
+                        <option selected value="date" >Tri par Ville</option>
+                    <?php
+                        while ($rows = mysqli_fetch_array($res))
+                        {
+                                echo'<option value="'.$rows['ville'].'">'.$rows['ville'].'</option>';      
+                        }
+                    ?>
+                        <input type="submit" value="Go">
+                        </select>
+                        </form>
+                    </div>
+                </div>
         <?php
             if(isset($_GET['choix']))
             {
@@ -47,7 +58,22 @@
             }
             else if (!isset($_GET['choix']))
             {
-                $result = mysqli_query($conn,"SELECT titre,image,lieu,description,creation,date FROM `evenement` ORDER BY 'date'");
+                if(isset($_GET['search']))
+                {
+                    $recherche = $_GET['search'];
+                    if(isset($_GET['title']))
+                    {
+                        $result = mysqli_query($conn,"SELECT * FROM `evenement` WHERE titre LIKE '%".$recherche."%'");
+                    }
+                    else
+                    {
+                        $result = mysqli_query($conn,"SELECT * FROM `evenement` WHERE titre OR description LIKE '%".$recherche."%'");
+                    }
+
+                }
+                else{
+                    $result = mysqli_query($conn,"SELECT titre,image,lieu,description,creation,date FROM `evenement` WHERE date>=CURRENT_DATE ORDER BY 'date'");
+                }
 
             }
             while ($row = mysqli_fetch_assoc($result)) {

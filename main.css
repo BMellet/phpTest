@@ -151,18 +151,43 @@ section form :not(button){
 }
 
 /* Evenement */
-.select
+.recherche
 {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
 }
-.select input
+.search
+{
+    width: 50%;
+    display: flex;
+}
+.search input:first-of-type{
+    width:30% ;
+}
+.search input:last-of-type{
+    width:10% ;
+}
+.search label{
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+
+.select
+{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end !important;
+}
+.recherche input
 {
     width: auto;
-    padding: 2px 20px 2px 20px;
+    padding: 10px 20px 10px 20px;
 }
-.select *
+.select select
 {
     width: 30%;
+}
+.select form{
+    justify-content: flex-end;
 }
